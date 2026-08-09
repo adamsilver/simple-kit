@@ -25,12 +25,12 @@
         <p>Check your spam or trash folder if you cannot find the email.</p>
 
         <p>
-          If you have not received the email after a few minutes, you can <a class="govuk-link" href="/test-cases/create-profile-live/email">request another link</a>.
+          If you have not received the email after a few minutes, you can <a class="govuk-link" href="/demos/create-profile-live/email">request another link</a>.
         </p>
 
         {% include "_partials/manual-upload-check.html" %}
 
-        <p class="app-simulate-link"><a class="govuk-link" href="/test-cases/create-profile-live/link" target="_blank" rel="noopener noreferrer">Simulate</a></p>
+        <p class="app-simulate-link"><a class="govuk-link" href="/demos/create-profile-live/link" target="_blank" rel="noopener noreferrer">Simulate</a></p>
 
       </div>
 
@@ -46,7 +46,7 @@
   {{ super() }}
   <script>
     new App.LiveConnection({
-      statusUrl: '/test-cases/create-profile-live/status',
+      statusUrl: '/demos/create-profile-live/status',
       role: 'primary',
       hidden: document.getElementById('app-manual-check-section'),
       image: document.getElementById('app-photo'),
@@ -55,6 +55,10 @@
         connected: document.getElementById('app-connected-state'),
         uploaded: document.getElementById('app-uploaded-state')
       }
+    })
+
+    new App.SimulateLink({
+      container: '.app-simulate-link a'
     })
   </script>
 {% endblock %}

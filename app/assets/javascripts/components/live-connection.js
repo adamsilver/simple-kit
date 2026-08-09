@@ -39,7 +39,7 @@ App.LiveConnection.prototype.handleStatus = function(data) {
   if (this.role === 'primary') {
     if (data.uploaded && this.shown !== 'uploaded') {
       if (this.image && data.photoFilename) {
-        this.image.src = '/test-cases/create-profile-live/file/' + data.photoFilename
+        this.image.src = '/demos/create-profile-live/file/' + data.photoFilename
       }
       this.showState('uploaded')
     } else if (data.secondaryConnected && this.shown === 'default') {

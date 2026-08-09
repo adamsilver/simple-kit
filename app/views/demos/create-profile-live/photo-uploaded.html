@@ -16,13 +16,13 @@
       <h1 class="govuk-heading-l">{{pageName}}</h1>
       <div id="app-continuing-default-state">
         <p>Click “I’ve uploaded my photo” on your original device to continue creating your profile there.</p>
-        <p>If you’ve closed the page on your original device <a class="govuk-link" href="/test-cases/create-profile-live/email">get a link sent to your email</a>.</p>
-        <p>Alternatively, you can <a class="govuk-link" href="/test-cases/create-profile-live/check">continue on this device</a>.</p>
+        <p>If you’ve closed the page on your original device <a class="govuk-link" href="/demos/create-profile-live/email">get a link sent to your email</a>.</p>
+        <p>Alternatively, you can <a class="govuk-link" href="/demos/create-profile-live/check">continue on this device</a>.</p>
       </div>
       <div id="app-continuing-ready-state" hidden>
         <p>You can now close this tab and continue on your original device.</p>
-        <p>If you’ve closed the page on your original device <a class="govuk-link" href="/test-cases/create-profile-live/email">get a link sent to your email</a>.</p>
-        <p>Alternatively, you can <a class="govuk-link" href="/test-cases/create-profile-live/check">continue on this device</a>.</p>
+        <p>If you’ve closed the page on your original device <a class="govuk-link" href="/demos/create-profile-live/email">get a link sent to your email</a>.</p>
+        <p>Alternatively, you can <a class="govuk-link" href="/demos/create-profile-live/check">continue on this device</a>.</p>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
   {{ super() }}
   <script>
     new App.LiveConnection({
-      statusUrl: '/test-cases/create-profile-live/status',
+      statusUrl: '/demos/create-profile-live/status',
       role: 'secondary',
       states: {
         default: document.getElementById('app-continuing-default-state'),

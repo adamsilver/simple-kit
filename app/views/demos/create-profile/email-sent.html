@@ -23,13 +23,22 @@
       <p>Check your spam or trash folder if you cannot find the email.</p>
 
       <p>
-        If you have not received the email after a few minutes, you can <a class="govuk-link" href="/test-cases/create-profile/email">request another link</a>.
+        If you have not received the email after a few minutes, you can <a class="govuk-link" href="/demos/create-profile/email">request another link</a>.
       </p>
 
       {% include "_partials/manual-upload-check.html" %}
 
-      <p class="app-simulate-link"><a class="govuk-link" href="/test-cases/create-profile/link" target="_blank" rel="noopener noreferrer">Simulate</a></p>
+      <p class="app-simulate-link"><a class="govuk-link" href="/demos/create-profile/link" target="_blank" rel="noopener noreferrer">Simulate</a></p>
 
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  <script>
+    new App.SimulateLink({
+      container: '.app-simulate-link a'
+    })
+  </script>
 {% endblock %}

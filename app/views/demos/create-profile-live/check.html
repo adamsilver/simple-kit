@@ -5,7 +5,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "/test-cases/create-profile/check-photo"
+    href: "/demos/create-profile-live/check-photo"
   }) }}
 {% endblock %}
 
@@ -16,17 +16,17 @@
       <h1 class="govuk-heading-l">Check details and create profile</h1>
 
       {% set photoHtml %}
-        <img src="/test-cases/create-profile/file/{{ uploadedFiles[0].filename }}" alt="Your photo" style="max-width: 200px;">
+        <img src="/demos/create-profile-live/file/{{ uploadedFiles[0].filename }}" alt="Your photo" style="max-width: 200px;">
       {% endset %}
 
       {{ govukSummaryList({
         rows: [
           {
             key: { text: "First name" },
-            value: { text: data.createProfile.firstName },
+            value: { text: data.createProfileLive.firstName },
             actions: {
               items: [{
-                href: "/test-cases/create-profile",
+                href: "/demos/create-profile-live",
                 text: "Change",
                 visuallyHiddenText: "first name"
               }]
@@ -34,10 +34,10 @@
           },
           {
             key: { text: "Last name" },
-            value: { text: data.createProfile.lastName },
+            value: { text: data.createProfileLive.lastName },
             actions: {
               items: [{
-                href: "/test-cases/create-profile",
+                href: "/demos/create-profile-live",
                 text: "Change",
                 visuallyHiddenText: "last name"
               }]
@@ -48,7 +48,7 @@
             value: { html: photoHtml },
             actions: {
               items: [{
-                href: "/test-cases/create-profile/upload",
+                href: "/demos/create-profile-live/upload",
                 text: "Change",
                 visuallyHiddenText: "photo"
               }]

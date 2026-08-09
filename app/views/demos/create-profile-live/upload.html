@@ -25,8 +25,8 @@
         <span class="govuk-caption-l">Create profile</span>
 
         {{ govukFileUpload({
-          id: "createProfile-photo",
-          name: "createProfile[photo]",
+          id: "createProfileLive-photo",
+          name: "createProfileLive[photo]",
           label: {
             text: "Upload your photo",
             isPageHeading: true,
@@ -40,12 +40,23 @@
 
         {{ govukButton({ text: "Continue" }) }}
 
-        {% if not data.createProfile.continuingOnOtherDevice %}
-          <p class="govuk-body"><a class="govuk-link" href="/test-cases/create-profile/qr-code">Use your phone or tablet to upload your photo</a></p>
+        {% if not data.createProfileLive.continuingOnOtherDevice %}
+          <p class="govuk-body"><a class="govuk-link" href="/demos/create-profile-live/qr-code">Use your phone or tablet to upload your photo</a></p>
         {% endif %}
 
       </form>
 
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  <script>
+    // Tells the primary device that this device has connected, by polling for status.
+    new App.LiveConnection({
+      statusUrl: '/demos/create-profile-live/status',
+      role: 'secondary'
+    })
+  </script>
 {% endblock %}

@@ -1,9 +1,9 @@
 <div id="app-uploaded-state" {% if not data.createProfileLive.live.uploaded %}hidden{% endif %}>
   <span class="govuk-caption-l">Create profile</span>
   <h1 class="govuk-heading-l">You’ve uploaded your photo</h1>
-  <img id="app-photo" alt="Your photo" {% if data.createProfileLive.live.photoFilename %}src="/test-cases/create-profile-live/file/{{ data.createProfileLive.live.photoFilename }}"{% endif %} style="max-width: 200px; display: block; margin-bottom: 20px;">
+  <img id="app-photo" alt="Your photo" {% if data.createProfileLive.live.photoFilename %}src="/demos/create-profile-live/file/{{ data.createProfileLive.live.photoFilename }}"{% endif %} style="max-width: 200px; display: block; margin-bottom: 20px;">
   {{ govukButton({
     text: "Continue",
-    href: "/test-cases/create-profile-live/check"
+    href: "/demos/create-profile-live/check"
   }) }}
 </div>

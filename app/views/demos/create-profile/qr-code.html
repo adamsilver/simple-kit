@@ -17,12 +17,21 @@
 
       {% include "_partials/qr-code-placeholder.html" %}
 
-      <p>If you cannot scan the QR code, you can <a class="govuk-link" href="/test-cases/create-profile/email">get a link sent to your email</a>. Open the link on your phone or tablet.</p>
+      <p>If you cannot scan the QR code, you can <a class="govuk-link" href="/demos/create-profile/email">get a link sent to your email</a>. Open the link on your phone or tablet.</p>
 
       {% include "_partials/manual-upload-check.html" %}
 
-      <p class="app-simulate-link"><a class="govuk-link" href="/test-cases/create-profile/qr-code/continue-on-other-device" target="_blank" rel="noopener noreferrer">Simulate</a></p>
+      <p class="app-simulate-link"><a class="govuk-link" href="/demos/create-profile/qr-code/continue-on-other-device" target="_blank" rel="noopener noreferrer">Simulate</a></p>
 
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {{ super() }}
+  <script>
+    new App.SimulateLink({
+      container: '.app-simulate-link a'
+    })
+  </script>
 {% endblock %}

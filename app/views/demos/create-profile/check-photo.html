@@ -17,21 +17,21 @@
       <h1 class="govuk-heading-l">Check your profile photo</h1>
 
       {% if uploadedFiles.length %}
-        <img src="/test-cases/create-profile-live/file/{{ uploadedFiles[0].filename }}" alt="Your photo" style="max-width: 200px; display: block; margin-bottom: 20px;">
+        <img src="/demos/create-profile/file/{{ uploadedFiles[0].filename }}" alt="Your photo" style="max-width: 200px; display: block; margin-bottom: 20px;">
       {% endif %}
 
       <form method="post">
 
         {{ govukRadios({
-          name: "createProfileLive[photoCorrect]",
-          idPrefix: "createProfileLive-photoCorrect",
+          name: "createProfile[photoCorrect]",
+          idPrefix: "createProfile-photoCorrect",
           fieldset: {
             legend: {
               text: "Do you want to use this photo?",
               classes: "govuk-fieldset__legend--m"
             }
           },
-          value: data.createProfileLive.photoCorrect,
+          value: data.createProfile.photoCorrect,
           items: [
             {
               value: "yes",
@@ -50,15 +50,4 @@
 
     </div>
   </div>
-{% endblock %}
-
-{% block pageScripts %}
-  {{ super() }}
-  <script>
-    // Keeps telling the primary device that this device is still connected.
-    new App.LiveConnection({
-      statusUrl: '/test-cases/create-profile-live/status',
-      role: 'secondary'
-    })
-  </script>
 {% endblock %}

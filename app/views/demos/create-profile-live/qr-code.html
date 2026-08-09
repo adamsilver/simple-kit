@@ -19,11 +19,11 @@
 
         {% include "_partials/qr-code-placeholder.html" %}
 
-        <p>If you cannot scan the QR code, you can <a class="govuk-link" href="/test-cases/create-profile-live/email">get a link sent to your email</a>. Open the link on your phone or tablet.</p>
+        <p>If you cannot scan the QR code, you can <a class="govuk-link" href="/demos/create-profile-live/email">get a link sent to your email</a>. Open the link on your phone or tablet.</p>
 
         {% include "_partials/manual-upload-check.html" %}
 
-        <p class="app-simulate-link"><a class="govuk-link" href="/test-cases/create-profile-live/qr-code/continue-on-other-device" target="_blank" rel="noopener noreferrer">Simulate</a></p>
+        <p class="app-simulate-link"><a class="govuk-link" href="/demos/create-profile-live/qr-code/continue-on-other-device" target="_blank" rel="noopener noreferrer">Simulate</a></p>
       </div>
 
       {% include "_partials/connected-state.html" %}
@@ -38,7 +38,7 @@
   {{ super() }}
   <script>
     new App.LiveConnection({
-      statusUrl: '/test-cases/create-profile-live/status',
+      statusUrl: '/demos/create-profile-live/status',
       role: 'primary',
       hidden: document.getElementById('app-manual-check-section'),
       image: document.getElementById('app-photo'),
@@ -47,6 +47,10 @@
         connected: document.getElementById('app-connected-state'),
         uploaded: document.getElementById('app-uploaded-state')
       }
+    })
+
+    new App.SimulateLink({
+      container: '.app-simulate-link a'
     })
   </script>
 {% endblock %}
